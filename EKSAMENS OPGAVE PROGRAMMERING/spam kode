@@ -1,0 +1,175 @@
+// // // const fs = require('fs');
+
+// // // const ABSOLUTE_PATH = "/../../data/users.json";
+// // // const USER_FILE = ("./users.json", {root:__dirname} );
+
+
+// // // class DB {
+// // //     constructor() {
+// // //  this.users = this.openFile();
+// // //     }
+
+
+// // //     openFile(){
+// // //         const file = fs.readFileSync('/users.json');
+// // //         return JSON.parse(file);
+// // //     }
+// // //     //*specifics
+// // //     //saveUser(){}
+// // // } 
+
+
+// // // console.log(new DB().openFile());
+// // // module.exports = new DB();
+
+
+
+// // // var datt = JSON.stringify(uda, null, 2);
+// // // fs.writeFileSync(USER_F,  bbb, function(err,data){
+// // //   if(err) throw err;
+// // // console.log(data)
+
+// // // }) 
+
+// // // //det hele fra ny spam:
+// // // const fs = require('fs');
+
+// // // const USER_F = fs.readFileSync("./userss.json");
+// // // var uda = JSON.parse(USER_F);
+// // // console.log(uda);
+
+// // // let ord = { "dang": "yo"}
+// // // var sord = JSON.stringify(ord, null, 2);
+// // // fs.writeFileSync(USER_F, sord, 'utf8')
+// // // //const file = fs.readFileSync(USER_F, 'utf8');
+// // // //return JSON.parse(file);
+
+// // // //nu er det done
+
+
+
+
+// // // // STEP 2: Adding new data to users object
+// // // fruser.push(users);
+   
+// // // // STEP 3: Writing to a file
+// // // fs.writeFile("users.json", JSON.stringify(users), err => {
+     
+// // //     // Checking for errors
+// // //     if (err) throw err; 
+   
+// // //     console.log("Done writing"); // Success
+// // // });
+
+
+// // //register script
+// // <script>
+// // var form = document.getElementById('form')
+// // form.addEventListener('submit', function(e){
+// //     e.preventDefault()
+
+
+// //     const user={
+// //     email: document.getElementById('password').value,
+// //     password: document.getElementById('password').value}
+
+// //     fetch("/localhost:8080/users/create", {
+// //         method: 'POST',
+// //         headers:{
+// //             "Content-Type": "application/json; charset=UTF-8",
+// //         body:JSON.stringify(user)
+
+// //         }
+// //     })
+// //     .then(function(response){
+// //         return response.json()
+// //     })
+// //     .then((response)=>{
+// // if(response) {
+// // location.href='/login.html'; }
+// // })
+
+// // })
+// // </script>
+// // // done
+
+// const express = require('express');
+// const router = express.Router();
+// const db = require('./../helpers/db.js');
+// const fs = require('fs');
+
+
+// const userModel = require('./../models/user.js');
+
+
+// // router.post('/create', (req, res)=>{
+// // const user =new userModel(req.body.email, req.body.password);
+// // console.log(user);
+// // DB.saveUser(user);
+// // });
+
+
+// // her laver vi et sted hvior brugeren kan gemme deres data i vores database fil(JSON)
+// // Vi bruger dbsaveuser til at pushe den information vi får i html body, ind i vores database.
+// router.post('/create',(req,res,next)=>{
+//     const user = new userModel(req.body.email, req.body.password);
+//     let foundUser = db.users.find((noget) => req.body.email === noget.email);
+//     if (!foundUser) {
+
+// db.saveUser(user);
+//     console.log(req.body);
+//     res.status(200)
+    
+// }
+// return res.send(('email bliver ')+ user.email + ('   Og koden bliver  ')+ user.password)
+
+
+// //next(res.redirect('/register.html'))
+
+// });
+
+// // her vil vi kunne logge ind. Det gør vi ved at checke om req.body har en email value, som er en som vi allerede har.
+// router.post('/login', (req,res, next)=>{
+// const user = new userModel(req.body.email, req.body.password);
+// let foundUser = db.users.find((noget) => req.body.email === noget.email);
+// if (foundUser) {
+//     let foundCode = db.users.find((x) => req.body.password == x.password);
+//     if(foundCode){
+//         console.log('findes !!!');
+//         res.send('Du er logget ind')
+
+
+//         // res.status(200).send('kfc')
+//         // return res.send('y')
+
+
+//     }
+//     if(!foundCode){
+//         console.log('findes ikke')
+//         res.send('Du er I K K E logget ind')
+
+//         // res.status(200).send('false')
+//         // return res.send('n')
+
+//     }
+
+// }
+// if (!foundUser){
+//     console.log('ikke engang emailen findes ')
+//     res.send('Din bruger findes bare ikke')
+// }
+// db.next(user)
+
+// //return res.redirect('/register.html')
+
+// }
+// )
+
+
+
+
+// router.get('/', (req,res) =>{
+//     res.status(200).send(true);
+// });
+
+// module.exports=router;

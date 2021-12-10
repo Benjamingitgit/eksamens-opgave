@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <h1 id='hh1' onload="dynamisk()">
+Login til venstre aller registerer en bruger!!!!        </h1>
+            <button onclick="login()">Login her</button>
+            
+            <button onclick="registrer()">registrer her</button>
+            <button onclick="tjek()">Klik her for at tjekke om du er logget ind eller ej!! Vi tjekker om der er logget ind i localStorage!!.</button>
+            <button onclick="fjern()">Her kan du trykke for at logge ud fra din key og value som er i localstorage</button>
+            <button onclick="opdater()">tryk her hvis du vil updatere din info</button>
+            <button onclick="opretprodukt()">Her kan du oprette produkt!!</button>
+            <button onclick="sletprodukt()">her kan du slette produkter</button>
+            <button onclick="opdaterprodukt()">Her kan redigere i din vare</button>
+
+
+
+        <div id='results'></div>
+    </body>
+    <script>
+        function dynamisk(){
+            alert('kk')
+    if(localStorage.getItem("navn") != null) {
+        alert('kk')
+    }}
+
+function login() {
+    location.href=("/login.html")   
+
+}
+function opretprodukt() {
+    location.href=("/lavprodukt.html")   
+
+}
+function opdater() {
+    location.href=("/put.html")   
+
+}
+function registrer() {
+    location.href=("/register.html")   
+
+}
+function opdaterprodukt() {
+    location.href=("/putprodukt.html")   
+
+}
+function sletprodukt() {
+    location.href=("/slet copy.html")   
+
+}
+function tjek() {
+    if(localStorage.getItem("mail navn") != null) {
+ alert('Du er allerede logget ind!!!')  }
+ if(localStorage.getItem("mail navn") === null) {
+     alert('Du er ikke logget ind. Prøv at logge ind eller registrer')  
+ 
+    }
+     }
+     function fjern(){
+         localStorage.removeItem('mail navn')
+         if(localStorage.getItem('mail navn')===null){
+             alert('Du er nu officielt logget ud')
+         }
+     }
+    </script>
+</html>
