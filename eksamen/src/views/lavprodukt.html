@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <script>
+            function onFileChange(){
+                console.log(e.target.files[0])
+            }
+        
+    </script>
+    <script src="\lavprodukt.js"></script>
+
+    <body>
+        <h1>
+            opret vare her!!        </h1>
+        <form id='formss' >
+            <input  type='text' placeholder='mail' id='email'>
+            <input  type='text' placeholder='pris' id='pris'>
+            <input  type='text' placeholder='kategori' id='kategori'>
+
+// her omkring ish skal der laves en fil uploader, som skal have id "produktbillede" tror jeg.
+
+            <input value='send produkt her! ' type='submit' id='ss'>
+        </form>
+        <input type="file" id="myFile" name="filename" onchange=onFileChange()>
+
+        <div id='results'></div>
+        <button onclick="index()">tilbage til index her!!!</button>
+
+
+    </body>
+
+</html>
